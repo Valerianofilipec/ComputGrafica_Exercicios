@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Ex 9</title>
+</head>
+<body style="margin:0px;">
+
+<div id="quad0" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:0px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad1" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:0px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad2" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:0px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad3" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:0px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad4" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:0px;" onclick="javascript:pontuar(this);"></div>
+
+<div id="quad5" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:110px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad6" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:110px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad7" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:110px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad8" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:110px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad9" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:110px;" onclick="javascript:pontuar(this);"></div>
+
+<div id="quad10" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:220px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad11" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:220px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad12" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:220px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad13" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:220px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad14" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:220px;" onclick="javascript:pontuar(this);"></div>
+
+<div id="quad15" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:330px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad16" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:330px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad17" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:330px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad18" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:330px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad19" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:330px;" onclick="javascript:pontuar(this);"></div>
+
+<div id="quad20" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:440px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad21" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:440px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad22" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:440px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad23" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:440px;" onclick="javascript:pontuar(this);"></div>
+<div id="quad24" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:440px;" onclick="javascript:pontuar(this);"></div>
+
+<div  style="position:absolute; border: solid 1px #000000; left:0px; top:550px;">SCORE: <a id="score">0 </a></div>
+<div id="tarefasAdicionais" style="position:absolute; border: solid 1px #000000; left:0px; top:700px; margin-bottom:50px;">
+    Quando se clica num quadrado bom a pontua��o aumenta 1 ponto.<br />
+    Quando se clica num quadrado inimigo a pontua��o diminui 1 ponto.<br />
+    Quando se clica num quadrado excelente a pontua��o aumenta 10 pontos.<br />
+    � medida que o tempo passa a velocidade com que os quadrados mudam aumenta.<br />
+    O jogo termina ao fim de um determinado intervalo de tempo.<br />
+    O jogo reinicia.
+</div>
+
+<script language="javascript" type="text/javascript">
+<!--    
+    nQuads = 25; quadEscolhido = -1; quadAnterior = -1; pontos = 0;    
+    function pontuar(obj){
+        if(obj.style.backgroundColor == "rgb(255, 0, 0)"){
+            pontos = pontos + 1;
+            document.getElementById("score").innerHTML = pontos;
+        }        
+    }    
+    function iniciar(){
+        setInterval(function(){
+            if(quadAnterior != -1){
+                document.getElementById("quad" + quadAnterior).style.backgroundColor = "#0000FF";
+            }
+            quadEscolhido = Math.floor(Math.random() * nQuads);
+            document.getElementById("quad" + quadEscolhido).style.backgroundColor = "#FF0000";
+            quadAnterior = quadEscolhido;
+        }, 2000);
+    }              
+    iniciar();
+-->
+</script>
+
+</body>
+</html>

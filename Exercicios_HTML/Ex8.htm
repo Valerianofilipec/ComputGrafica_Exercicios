@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Ex 8</title>
+</head>
+<body style="margin:0px;">
+
+<div id="quad0" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:0px;"></div>
+<div id="quad1" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:0px;"></div>
+<div id="quad2" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:0px;"></div>
+<div id="quad3" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:0px;"></div>
+<div id="quad4" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:0px;"></div>
+
+<div id="quad5" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:110px;"></div>
+<div id="quad6" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:110px;"></div>
+<div id="quad7" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:110px;"></div>
+<div id="quad8" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:110px;"></div>
+<div id="quad9" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:110px;"></div>
+
+<div id="quad10" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:220px;"></div>
+<div id="quad11" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:220px;"></div>
+<div id="quad12" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:220px;"></div>
+<div id="quad13" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:220px;"></div>
+<div id="quad14" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:220px;"></div>
+
+<div id="quad15" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:330px;"></div>
+<div id="quad16" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:330px;"></div>
+<div id="quad17" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:330px;"></div>
+<div id="quad18" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:330px;"></div>
+<div id="quad19" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:330px;"></div>
+
+<div id="quad20" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:440px;"></div>
+<div id="quad21" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:440px;"></div>
+<div id="quad22" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:440px;"></div>
+<div id="quad23" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:440px;"></div>
+<div id="quad24" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:440px;"></div>
+
+
+<script language="javascript" type="text/javascript">
+<!--        iSeq_0 = 0; seq_0 = [0, 1, 2, 3, 4, 9, 14, 19, 24, 23, 22, 21, 20, 15, 10, 5];    iSeq_1 = 1; seq_1 = [11, 16, 17, 18, 13, 8, 7, 6];                   function passoAnimacao(iSeq, seq, cor){        document.getElementById("quad" + seq[iSeq]).style.backgroundColor = cor;        if((iSeq - 1) < 0){                            document.getElementById("quad" + (seq[seq.length - 1])).style.backgroundColor = "#0000FF";        }else{            document.getElementById("quad" + (seq[iSeq - 1])).style.backgroundColor = "#0000FF";        }        iSeq++;        if(iSeq >= seq.length){            iSeq = 0;        }        return iSeq;    }            function iniciar(){        setInterval(function(){                     iSeq_0 = passoAnimacao(iSeq_0, seq_0, "#FF0000"); iSeq_1 = passoAnimacao(iSeq_1, seq_1, "#00FF00");                        if(document.getElementById("quad12").style.backgroundColor == "rgb(0, 0, 255)"){                document.getElementById("quad12").style.backgroundColor = "#FFFF00";            }else{                document.getElementById("quad12").style.backgroundColor = "#0000FF";            }        }, 500);    }        iniciar();-->
+</script>
+
+</body>
+</html>

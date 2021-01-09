@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Ex 3</title>
+</head>
+<body style="margin:0px;">
+
+<div id="quad0" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:0px;"></div>
+<div id="quad1" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:0px;"></div>
+<div id="quad2" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:0px;"></div>
+<div id="quad3" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:110px;"></div>
+<div id="quad4" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:110px;"></div>
+<div id="quad5" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:110px;"></div>
+<div id="quad6" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:220px;"></div>
+<div id="quad7" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:220px;"></div>
+<div id="quad8" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:220px;"></div>
+<script>
+<!--    
+quadradoAtivo = 0; totalQuadrados = 9;    
+function iniciar(){
+    setInterval(function(){                         
+        if((quadradoAtivo - 1) < 0){
+            document.getElementById("quad" + (totalQuadrados - 1)).style.backgroundColor = "#0000FF";
+        }else{
+            document.getElementById("quad" + (quadradoAtivo - 1)).style.backgroundColor = "#0000FF";                
+        }
+        document.getElementById("quad" + quadradoAtivo).style.backgroundColor = "#FF0000";
+        quadradoAtivo++;
+        if(quadradoAtivo >= totalQuadrados){
+            quadradoAtivo = 0;
+        }                        
+    }, 300);
+}    
+iniciar();
+-->
+</script>
+
+</body>
+</html>

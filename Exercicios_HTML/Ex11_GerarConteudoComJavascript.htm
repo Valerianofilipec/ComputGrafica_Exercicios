@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Ex 11</title>
+</head>
+<body style="margin:0px;">
+
+<script language="javascript" type="text/javascript">
+<!--
+
+l = 21; h = 21; lquad = 20;     
+function iniciar(){    
+    for(let i=0, yquad = 0; i<l; i++, yquad += lquad){
+        for(let j=0, xQuad = 0; j<h; j++, xQuad += lquad){
+            document.write( 
+            "<div id=\"quad_" + j + "_" + i + 
+            "\" style=\"position:absolute; background-color:#00FFFF; width:" 
+			+ lquad + 
+            "px; height:" + lquad + 
+            "px; left:" + xQuad + "px; top:" + yquad + "px;" +
+            "border: solid 1px #000000; \"></div>");
+        }
+    }    
+}
+iniciar();
+
+-->
+</script>
+
+
+</body>
+</html>
