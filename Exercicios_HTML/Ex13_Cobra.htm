@@ -1,24 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<!DOCTYPE html>
+<html lang="pt">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex 10</title>
 </head>
 <body style="margin:0px;">
 
-<script language="javascript" type="text/javascript">
-<!--idInterval = -1;l = 21; h = 21; lquad = 20; xcobra = ycobra = 0; dircobra = 0;gameon = true;    function keyDown(DnEvents){    if(gameon){	    var key = (document.all) ? window.event.keyCode: DnEvents.which;
-	    switch (key){
-	        case 38 :   //Up
-	            dircobra = 0; break;
-	        case 39 :   //Right
-	            dircobra = 1; break;
-	        case 37 :   //Left
-	            dircobra = 3; break;
-	        case 40 :   //Down
-	            dircobra = 2; break;
-	    }            }}      function iniciar(){        //Desenhar fundo            for(i=0, yquad = 0; i<l; i++, yquad = yquad + lquad){        for(j=0, xQuad = 0; j<h; j++, xQuad = xQuad + lquad){            document.write( "<div id=\"quad_" + j + "_" + i +                             "\" style=\"position:absolute; " +                            "background-color:#CCCCCC; width:" + lquad +                             "px; height:" + lquad +                             "px; left:" + xQuad + "px; top:" + yquad + "px;\"></div>");        }    }        //Desenhar cobra            xcobra = Math.round(l / 2) - 1;    ycobra = Math.round(h / 2) - 1;    document.getElementById("quad_" + xcobra + "_" + ycobra).style.backgroundColor = "#0000FF";    idInterval = setInterval(function(){        prevx = xcobra;        prevy = ycobra;        switch(dircobra){            case 0: ycobra--; break;                                case 1: xcobra++; break;            case 2: ycobra++; break;            case 3: xcobra--;break;        }                                if(xcobra < 0 || xcobra >= l || ycobra < 0 || ycobra >= h){ //Verificar se cobra embateu numa parede            clearInterval(idInterval);            gameon = false;        }else{                         document.getElementById("quad_" + prevx + "_" + prevy).style.backgroundColor = "#CCCCCC";            document.getElementById("quad_" + xcobra + "_" + ycobra).style.backgroundColor = "#0000FF";        }            }, 200);}              document.onkeydown = keyDown;iniciar();-->
-</script>
+    <script>
+        let idInterval = -1,
+        l = h = 21, lquad = 20, 
+        xcobra = ycobra = dircobra = 0,
+        gameon = true;
+            
+        function keyDown(DnEvents){
+            if(gameon){
+                const key = (document.all) ? window.event.keyCode: DnEvents.which;
+                switch (key){
+                    case 37 : dircobra = 3; break;//Left
+                    case 38 : dircobra = 0; break;//Up
+                    case 39 : dircobra = 1; break;//Right
+                    case 40 : dircobra = 2; break;//Down
+                }        
+            }
+        }      
+        function iniciar(){    
+            //Desenhar fundo        
+            for(let i=0, yquad = 0; i<l; i++, yquad = yquad + lquad){
+                for(let j=0, xQuad = 0; j<h; j++, xQuad = xQuad + lquad){
+                    document.write( "<div id=\"quad_" + j + "x" + i + 
+                                    "\" style=\"position:absolute; " +
+                                    "background-color:#CCCCCC; width:" + lquad + 
+                                    "px; height:" + lquad + 
+                                    "px; left:" + xQuad + "px; top:" + yquad + "px;\"></div>");
+                }
+            }    
+            //Desenhar cobra        
+            xcobra = Math.round(l / 2) - 1;
+            ycobra = Math.round(h / 2) - 1;
+            document.getElementById("quad_" + xcobra + "x" + ycobra).style.backgroundColor = "#0000FF";
 
-
+            idInterval = setInterval(function(){
+                let prevx = xcobra,
+                    prevy = ycobra;
+                switch(dircobra){
+                    case 0: ycobra--; break;                    
+                    case 1: xcobra++; break;
+                    case 2: ycobra++; break;
+                    case 3: xcobra--;break;
+                }                        
+                if(xcobra < 0 || xcobra >= l || ycobra < 0 || ycobra >= h){ //Verificar se cobra embateu numa parede
+                    clearInterval(idInterval);
+                    gameon = false;
+                }else{             
+                    document.getElementById("quad_" + prevx + "x" + prevy).style.backgroundColor = "#CCCCCC";
+                    document.getElementById("quad_" + xcobra + "x" + ycobra).style.backgroundColor = "#0000FF";
+                }        
+            }, 200);
+        }              
+        document.onkeydown = keyDown;
+        iniciar();
+    </script>
 </body>
 </html>

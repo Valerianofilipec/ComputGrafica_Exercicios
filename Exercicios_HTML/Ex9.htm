@@ -1,6 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<!DOCTYPE html>
+<html lang="pt">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex 9</title>
 </head>
 <body style="margin:0px;">
@@ -35,19 +37,25 @@
 <div id="quad23" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:330px; top:440px;" onclick="javascript:pontuar(this);"></div>
 <div id="quad24" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:440px; top:440px;" onclick="javascript:pontuar(this);"></div>
 
-<div  style="position:absolute; border: solid 1px #000000; left:0px; top:550px;">SCORE: <a id="score">0 </a></div>
+<div  style="position:absolute; border: solid 1px #000000; left:0px; top:550px;">
+    SCORE: <a id="score">0 </a>
+</div>
+
 <div id="tarefasAdicionais" style="position:absolute; border: solid 1px #000000; left:0px; top:700px; margin-bottom:50px;">
-    Quando se clica num quadrado bom a pontua��o aumenta 1 ponto.<br />
-    Quando se clica num quadrado inimigo a pontua��o diminui 1 ponto.<br />
-    Quando se clica num quadrado excelente a pontua��o aumenta 10 pontos.<br />
-    � medida que o tempo passa a velocidade com que os quadrados mudam aumenta.<br />
+    Quando se clica num quadrado bom a pontuação aumenta 1 ponto.<br />
+    Quando se clica num quadrado inimigo a pontuação diminui 1 ponto.<br />
+    Quando se clica num quadrado excelente a pontuação aumenta 10 pontos.<br />
+    A medida que o tempo passa a velocidade com que os quadrados mudam aumenta.<br />
     O jogo termina ao fim de um determinado intervalo de tempo.<br />
     O jogo reinicia.
 </div>
 
-<script language="javascript" type="text/javascript">
-<!--    
-    nQuads = 25; quadEscolhido = -1; quadAnterior = -1; pontos = 0;    
+<script>
+    let nQuads = 25,
+    quadEscolhido = -1,
+    quadAnterior = -1,
+    pontos = 0;
+        
     function pontuar(obj){
         if(obj.style.backgroundColor == "rgb(255, 0, 0)"){
             pontos = pontos + 1;
@@ -65,7 +73,6 @@
         }, 2000);
     }              
     iniciar();
--->
 </script>
 
 </body>

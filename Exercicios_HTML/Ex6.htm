@@ -1,47 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<!DOCTYPE html>
+<html lang="pt">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex 6</title>
 </head>
 <body style="margin:0px;">
-<div id="quad0" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:0px;"></div>
-<div id="quad1" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:0px;"></div>
-<div id="quad2" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:0px;"></div>
-<div id="quad3" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:110px;"></div>
-<div id="quad4" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:110px;"></div>
-<div id="quad5" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:110px;"></div>
-<div id="quad6" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:220px;"></div>
-<div id="quad7" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:220px;"></div>
-<div id="quad8" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:220px;"></div>
-<script language="javascript" type="text/javascript">
-<!--    
-    iSeq_E = 0; seq_E = [0, 3, 6, 3];
-    iSeq_D = 0; seq_D = [2, 5, 8, 5];
-        
-    function passoAnimacao(iSeq, seq){
-        document.getElementById("quad" + seq[iSeq]).style.backgroundColor = "#FF0000";
-        if((iSeq - 1) < 0){                
-            document.getElementById("quad" + (seq[seq.length - 1])).style.backgroundColor = "#0000FF";
-        }else{
-            document.getElementById("quad" + (seq[iSeq - 1])).style.backgroundColor = "#0000FF";                
+    <div id="quad0" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:0px;"></div>
+    <div id="quad1" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:0px;"></div>
+    <div id="quad2" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:0px;"></div>
+
+    <div id="quad3" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:110px;"></div>
+    <div id="quad4" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:110px;"></div>
+    <div id="quad5" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:110px;"></div>
+
+    <div id="quad6" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:0px; top:220px;"></div>
+    <div id="quad7" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:110px; top:220px;"></div>
+    <div id="quad8" style="position:absolute; background-color:#0000FF; width:100px; height:100px; left:220px; top:220px;"></div>
+
+
+    <script>
+        let iSeq_E = 0, seq_E = [0, 3, 6, 3],
+            iSeq_D = 0, seq_D = [2, 5, 8, 5];
+            
+        function passoAnimacao(iSeq, seq){
+            document.getElementById("quad" + seq[iSeq]).style.backgroundColor = "#FF0000";
+            if((iSeq - 1) < 0){                
+                document.getElementById("quad" + (seq[seq.length - 1])).style.backgroundColor = "#0000FF";
+            }else{
+                document.getElementById("quad" + (seq[iSeq - 1])).style.backgroundColor = "#0000FF";                
+            }
+            iSeq++;
+            if(iSeq >= seq.length){
+                iSeq = 0;
+            }
+            return iSeq;
         }
-        iSeq++;
-        if(iSeq >= seq.length){
-            iSeq = 0;
+            
+        function iniciar(){
+            setInterval(function(){         
+                iSeq_E = passoAnimacao(iSeq_E, seq_E);
+                iSeq_D = passoAnimacao(iSeq_D, seq_D);
+            }, 500);
         }
-        return iSeq;
-    }
         
-    function iniciar(){
-        setInterval(function(){         
-            iSeq_E = passoAnimacao(iSeq_E, seq_E);
-            iSeq_D = passoAnimacao(iSeq_D, seq_D);
-        }, 500);
-    }
-    
-    iniciar();
--->
-</script>
+        iniciar();
+    </script>
 
 </body>
 </html>

@@ -1,28 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<!DOCTYPE html>
+<html lang="pt">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex 10</title>
 </head>
 <body style="margin:0px;">
 
-<script language="javascript" type="text/javascript">
-<!--
-function keyDown(DnEvents){
-    const key = (document.all)?window.event.keyCode:DnEvents.which;
-    switch (key){
-        case 38 : alert("Tecla Cima"); break;
-        case 39 : alert("Tecla Direita"); break;
-        case 37 : alert("Tecla Esquerda"); break;
-        case 40 : alert("Tecla Baixo"); break;
-        default: alert( "Tecla " + String.fromCharCode(key) + 
-                        " com o c�digo " + key); break;            
-    }        
-}      
-document.onkeydown = keyDown;
--->
-</script>
-<h1>Carregue numa tecla!</h1>
+    <script>
+        function keyDown(DnEvents){
+            const key = (document.all)?window.event.keyCode:DnEvents.which;
+            switch (key){
+                case 38 : alert("Tecla Cima"); break;
+                case 39 : alert("Tecla Direita"); break;
+                case 37 : alert("Tecla Esquerda"); break;
+                case 40 : alert("Tecla Baixo"); break;
+                default: alert( "Tecla " + String.fromCharCode(key) + " com o código " + key); break;            
+            }        
+        }      
+        document.onkeydown = keyDown;
+    </script>
 
-
+    <h1>Carregue numa tecla!</h1>
 </body>
 </html>
