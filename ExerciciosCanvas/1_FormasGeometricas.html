@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8"/>
+    <title>Ex_1-Formas Geometricas</title>
+</head>
+<body>
+    <canvas id="ex1" width="400" height="400" style="border:solid 1px #000000;">
+        Please use a browser that supports "canvas"
+    </canvas>
+    <script>
+        function iniciar(){
+            const canvas = document.getElementById("ex1");
+            if(!canvas){
+                alert("ERRO! a obter o canvas.");
+                return false;
+            }
+            ctx = canvas.getContext("2d");  
+            //Retangulo azul
+            ctx.fillStyle = "rgba(0, 0, 255, 1.0)"; 
+            ctx.fillRect(120, 10, 150, 150);
+            //area quadra dentro do retangulo azul
+            ctx.clearRect(130, 20, 110, 110);
+            // mudar a cor/estilo & desenhar o retangulo c/ borda vermelha
+            ctx.strokeStyle = "rgba(255, 0, 0, 1.0)";
+            ctx.strokeRect(10, 350, 300, 30);
+            //linha diagonal do quadrado canvas
+            ctx.moveTo(0, 0); ctx.lineTo(400, 400); ctx.stroke();
+            //linha diagonal menor no canto inferior direito do quadrado canvas
+            ctx.moveTo(400, 200); ctx.lineTo(200, 400); ctx.stroke(); 
+                      
+            ctx.strokeStyle = "rgba(200, 200, 0, 1.0)";                      
+            ctx.beginPath();
+            //Center x, center y, raio, starting angle,  ending angle (radianos, 0 é às 3:00)
+            ctx.arc(200, 300, 70, 0, 2*Math.PI); ctx.stroke();//Arco amarelo 
+            //arco verde de borda rosa         
+            ctx.strokeStyle = "rgba(255, 0, 255, 1.0)";
+            ctx.fillStyle = "rgba(0, 255, 0, 1.0)";
+            ctx.beginPath(); ctx.arc(100, 100, 70, 0, 1.5*Math.PI);
+            ctx.fill(); ctx.stroke(); 
+            //"Hello World" c/ preenchemento preto
+            ctx.fillStyle = "rgba(0, 0, 0, 1.0)"; ctx.font = "30px Time-Roman";
+            ctx.fillText("Olá Mundo!", 150, 50);  
+            //"Hello World" de borda preta
+            ctx.strokeStyle = "rgba(0, 0, 0, 1.0)";
+            ctx.strokeText("Hello World!", 210, 100);
+            //"Hello World" amarelo de borda vermelha
+            ctx.strokeStyle = "rgba(255, 0, 0, 1.0)"; 
+            ctx.fillStyle = "rgba(255, 255, 0, 1.0)";
+            ctx.fillText("Hello World!", 210, 150);
+            ctx.strokeText("Hello World!",210, 150); 
+        }        
+        iniciar();        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <title>Ex_0-Olá Mundo!</title>
+</head>
+<body>
+    <canvas id="ex0" width="400" height="400" style="border:solid 1px #000000;">
+        Please use a browser that supports "canvas"
+    </canvas>
+
+    <script>
+        function iniciar(){
+            const canvas = document.getElementById("ex0");
+            if(!canvas){
+                alert("ERRO! a obter o canvas.");
+                return false;
+            }
+            //Obter o contexto para o rendering
+            const ctx = canvas.getContext("2d");
+            //Cor azul - R, G, B (0-255), Transparência (0-1)
+            ctx.fillStyle = "rgba(0, 50, 50, 1.0)";
+            //1º e 2º Parâmetros - Canto superior esquerdo do retângulo
+            //3º e 4º Parâmetros - Largura e altura
+            ctx.fillRect(120, 10, 150, 150);
+            
+            ctx.fillStyle = "rgba(0, 50, 50, 1.0)"; ctx.font = "30px Time-Roman";
+            ctx.fillText("Olá Mundo!", 120, 200);  
+        }        
+        iniciar();        
+    </script>
+</body>
+</html>

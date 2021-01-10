@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ex_2-Formas Geometricas</title>
+</head>
+<body>
+    <canvas id="exemplo" width="400" height="400" style="border:solid 1px #000000;">
+        Please use a browser that supports "canvas"
+    </canvas>
+
+    <script>
+        function iniciar(){
+            const canvas = document.getElementById("exemplo");
+            if(!canvas){alert("ERRO! a obter o canvas.");return false;}            
+            const ctx = canvas.getContext("2d");
+            
+            ctx.beginPath(); //Triângulo pequeno
+            ctx.moveTo(175, 50); ctx.lineTo(200, 75); ctx.lineTo(200, 25);
+            ctx.fill();
+                        
+            //Cara sorridente 
+            ctx.lineWidth = 3; ctx.beginPath(); 
+            ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Cara
+            ctx.moveTo(110, 75); ctx.arc(75, 75, 35, 0, Math.PI, false);  // Boca (clockwise)
+            ctx.moveTo(65, 65); ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Olho
+            ctx.moveTo(95, 65); ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Olho
+            ctx.stroke();            
+                        
+            // Triângulo preenchido
+            ctx.beginPath();
+            ctx.moveTo(25, 225); ctx.lineTo(105, 225); ctx.lineTo(25, 305);
+            ctx.fill();
+
+            // Triângulo vazio            
+            ctx.lineWidth = 10; ctx.strokeStyle = "rgba(255, 0, 0, 1.0)";
+            ctx.beginPath();
+            ctx.moveTo(125, 325); ctx.lineTo(125, 245); ctx.lineTo(45, 325);
+            ctx.closePath();
+            ctx.stroke();
+            
+        }        
+        iniciar();        
+    </script>
+</body>
+</html>

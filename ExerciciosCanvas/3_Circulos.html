@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <title>Ex_3-Circulos</title>
+</head>
+<body>
+    <canvas id="exemplo" width="400" height="500" style="border:solid 1px #000000;">
+        Please use a browser that supports "canvas"
+    </canvas>
+    <script>
+        function iniciar(){        
+            const canvas = document.getElementById("exemplo");
+            if(!canvas){alert("ERRO! Não consegui obter o canvas.");return false;}
+            
+            const ctx = canvas.getContext("2d");
+            
+            //1ª fila de Arcos
+            ctx.beginPath(); ctx.arc(50, 50, 30, 0, 1.5*Math.PI, true);
+            ctx.fill();
+            
+            ctx.beginPath(); ctx.arc(150, 50, 30, 0, 1.5*Math.PI, false);
+            ctx.fill();
+            
+            ctx.beginPath(); ctx.arc(250, 50, 30, 0, 1.5*Math.PI, true);
+            ctx.stroke();
+            
+            ctx.beginPath(); ctx.arc(350, 50, 30, 0, 1.5*Math.PI, false);
+            ctx.stroke();
+            
+            //1ª fila de Arcos
+            ctx.beginPath(); ctx.arc(50, 150, 30, 0, Math.PI, true);
+            ctx.fill();
+
+            ctx.beginPath(); ctx.arc(150, 150, 30, 0, Math.PI, false);
+            ctx.fill();
+
+            ctx.beginPath(); ctx.arc(250, 150, 30, 0, Math.PI, true);
+            ctx.stroke();
+
+            ctx.beginPath(); ctx.arc(350, 150, 30, 0, Math.PI, false);
+            ctx.stroke();
+            
+            
+            //Pacman cheio
+            ctx.beginPath();
+            ctx.arc(50, 250, 30, 315*(Math.PI/180), 45*(Math.PI/180), true);
+            ctx.lineTo(50, 250); ctx.closePath(); ctx.fill();            
+
+            ctx.beginPath();
+            ctx.arc(150, 250, 30, -45*(Math.PI/180), -135*(Math.PI/180), false);
+            ctx.lineTo(150, 250); ctx.closePath(); ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(250, 250, 30, 225*(Math.PI/180), 135*(Math.PI/180), false);
+            ctx.lineTo(250, 250); ctx.closePath(); ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(350, 250, 30, 45*(Math.PI/180), 135*(Math.PI/180), true);
+            ctx.lineTo(350, 250); ctx.closePath(); ctx.fill();
+            
+            
+            //Pacman vazio
+            ctx.beginPath();
+            ctx.arc(50, 350, 30, 315*(Math.PI/180), 45*(Math.PI/180), true);
+            ctx.lineTo(50, 350); ctx.closePath(); ctx.stroke();            
+
+            ctx.beginPath();
+            ctx.arc(150, 350, 30, -45*(Math.PI/180), -135*(Math.PI/180), false);
+            ctx.lineTo(150, 350); ctx.closePath(); ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(250, 350, 30, 225*(Math.PI/180), 135*(Math.PI/180), false);
+            ctx.lineTo(250, 350); ctx.closePath(); ctx.stroke();
+                        
+            ctx.beginPath();
+            ctx.arc(350, 350, 30, 45*(Math.PI/180), 135*(Math.PI/180), true);
+            ctx.lineTo(350, 350); ctx.closePath(); ctx.stroke();
+
+            //Pacman Amarelo
+            ctx.strokeStyle = "rgba(0, 0, 0, 1.0)";
+            ctx.fillStyle = "rgba(255, 255, 0, 1.0)";
+            
+            ctx.beginPath();
+            ctx.arc(50, 450, 30, 315*(Math.PI/180), 45*(Math.PI/180), true);
+            ctx.lineTo(50, 450); ctx.closePath(); ctx.stroke(); ctx.fill();            
+
+            ctx.beginPath();
+            ctx.arc(150, 450, 30, -45*(Math.PI/180), -135*(Math.PI/180), false);
+            ctx.lineTo(150, 450); ctx.closePath(); ctx.stroke(); ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(250, 450, 30, 225*(Math.PI/180), 135*(Math.PI/180), false);
+            ctx.lineTo(250, 450); ctx.closePath(); ctx.stroke(); ctx.fill();
+                        
+            ctx.beginPath();
+            ctx.arc(350, 450, 30, 45*(Math.PI/180), 135*(Math.PI/180), true);
+            ctx.lineTo(350, 450); ctx.closePath(); ctx.stroke(); ctx.fill();            
+        }        
+        iniciar();
+    </script>
+</body>
+</html>
